@@ -28,6 +28,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Product delete(String idProductDelete) {
+        return productRepository.delete(idProductDelete);
+    }
+
+    @Override
     public List <Product> findAll() {
         Iterator <Product> productIterator = productRepository.findAll();
         List <Product> allProduct = new ArrayList<>();
