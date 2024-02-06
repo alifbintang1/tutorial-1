@@ -25,7 +25,8 @@ public class ProductServiceImpl implements ProductService {
 
     public Product delete(String idProductDelete) {
         return productRepository.delete(idProductDelete);
-=======
+    }
+
     public Product edit(Product product) {
         productRepository.edit(product);
         return product;
