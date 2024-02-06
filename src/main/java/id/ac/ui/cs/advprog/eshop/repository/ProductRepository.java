@@ -17,6 +17,17 @@ public class ProductRepository {
         productData.add(product);
         return product;
     }
+    public Product edit(Product product){
+
+        for (Product currentProduct: productData) {
+            if (currentProduct.getProductId().equals(product.getProductId())) {
+                currentProduct.setProductQuantity(product.getProductQuantity());
+                currentProduct.setProductName(product.getProductName());
+                return currentProduct;
+            }
+        }
+        return null;
+    }
 
     public Product delete (String idProductDelete) {
         for (Product currentProduct : productData) {
