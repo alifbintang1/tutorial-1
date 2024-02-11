@@ -91,6 +91,11 @@ class ProductRepositoryTest {
 
     @Test
     public void testEditNonExistingProduct() {
+        Product newProduct = new Product();
+        newProduct.setProductName("NewProduct");
+        newProduct.setProductQuantity(10);
+        Product createdProduct = productRepository.create(newProduct);
+
         // Attempt to edit a product that does not exist
         Product nonExistingProduct = new Product();
         nonExistingProduct.setProductName("NonExistingProduct");
@@ -121,6 +126,11 @@ class ProductRepositoryTest {
 
     @Test
     public void testDeleteNonExistingProduct() {
+        Product newProduct = new Product();
+        newProduct.setProductName("NewProduct");
+        newProduct.setProductQuantity(10);
+        Product createdProduct = productRepository.create(newProduct);
+
         Product deletedProduct = productRepository.delete("NonExistingProductId");
         assertNull(deletedProduct);
     }
