@@ -5,7 +5,11 @@ import id.ac.ui.cs.advprog.eshop.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.Iterator;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,78 +17,66 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @ExtendWith(MockitoExtension.class)
 
 public class ProductServiceTest {
-    @InjectMocks
+    @Mock
     ProductRepository productRepository;
 
     @InjectMocks
     ProductServiceImpl service;
-
-    Product createProduct(String name, String id, int quantity){
+    @Test
+    void testCreateAndFind() {
         Product product = new Product();
-        product.setProductId(id);
-        product.setProductName(name);
-        product.setProductQuantity(quantity);
+        product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product.setProductName("Sampo Cap Bambang");
+        product.setProductQuantity(100);
 
-        return product;
+        Mockito.when(productRepository.create(product)).thenReturn(product);
+        service.create(product);
+
+        Mockito.when(productRepository.findAll()).thenReturn(List.of(product).iterator());
+        Iterator<Product> productIterator = service.findAll().iterator();
+
+        assertTrue(productIterator.hasNext());
+        Product savedProduct = productIterator.next();
+        assertEquals(product.getProductId(), savedProduct.getProductId());
+        assertEquals(product.getProductName(), savedProduct.getProductName());
+        assertEquals(product.getProductQuantity(), savedProduct.getProductQuantity());
     }
 
-//    @Test
-//    void testCreateProduct(){
-//        Product newProduct = createProduct("nama","id",1);
-//        Product result = service.create(newProduct);
-//        newProduct.setProductId("id"); // productRepo.create changes the id
-//
-//        assertEquals(newProduct.getProductId(), result.getProductId());
-//        assertEquals(newProduct.getProductName(), result.getProductName());
-//        assertEquals(newProduct.getProductQuantity(), result.getProductQuantity());
-//    }
-//
-//    @Test
-//    void testFindAllProduct(){
-//        Product product1 = createProduct("nama","id",1);
-//        service.create(product1);
-//        product1.setProductId("id"); // productRepo.create changes the id
-//
-//        Product product2 = createProduct("nomu","uwu",2);
-//        service.create(product2);
-//        product2.setProductId("uwu");
-//
-//        List<Product> list = service.findAll();
-//
-//        assertEquals("id", list.get(0).getProductId());
-//        assertEquals("nama", list.get(0).getProductName());
-//        assertEquals(1, list.get(0).getProductQuantity());
-//        assertEquals("uwu", list.get(1).getProductId());
-//        assertEquals("nomu", list.get(1).getProductName());
-//        assertEquals(2, list.get(1).getProductQuantity());
-//    }
-//
-//    @Test
-//    void testEditGetProduct(){
-//        Product product1 = createProduct("nama","id",1);
-//        service.create(product1);
-//        product1.setProductId("id"); // productRepo.create changes the id
-//
-//        Product product2 = createProduct("nomu","id",2);
-//        boolean hasEdit = service.edit(product2);
-//        Product resultEdit = service.getProduct(product1.getProductId());
-//
-//        assertTrue(hasEdit);
-//
-//        assertEquals("id", resultEdit.getProductId());
-//        assertEquals("nomu", resultEdit.getProductName());
-//        assertEquals(2, resultEdit.getProductQuantity());
-//    }
-//    @Test
-//    void testCreateDeleteProduct(){
-//        Product product1 = createProduct("nama","id",1);
-//        service.create(product1);
-//        product1.setProductId("id"); // productRepo.create changes the id
-//
-//        boolean hasDelete = service.delete("id");
-//
-//        List<Product> list = service.findAll();
-//        assertTrue(hasDelete);
-//        assertEquals(0,list.size());
-//    }
+
+    @Test
+    void testEditProduct(){
+        Product product = new Product();
+        product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product.setProductName("Sampo Cap Bambang");
+        product.setProductQuantity(100);
+
+        Mockito.when(productRepository.create(product)).thenReturn(product);
+        service.create(product);
+
+        Mockito.when(productRepository.edit(product)).thenReturn(product);
+        Product resultEdit = service.edit(product);
+
+        assertEquals("eb558e9f-1c39-460e-8860-71af6af63bd6", resultEdit.getProductId());
+        assertEquals("Sampo Cap Bambang", resultEdit.getProductName());
+        assertEquals(100, resultEdit.getProductQuantity());
+    }
+
+    @Test
+    void testDeleteProduct(){
+        Product product = new Product();
+        product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product.setProductName("Sampo Cap Bambang");
+        product.setProductQuantity(100);
+
+        Mockito.when(productRepository.create(product)).thenReturn(product);
+        service.create(product);
+
+        Mockito.when(productRepository.delete("eb558e9f-1c39-460e-8860-71af6af63bd6")).thenReturn(product);
+        Product resultDelete = service.delete("eb558e9f-1c39-460e-8860-71af6af63bd6");
+
+        assertEquals("eb558e9f-1c39-460e-8860-71af6af63bd6", resultDelete.getProductId());
+        assertEquals("Sampo Cap Bambang", resultDelete.getProductName());
+        assertEquals(100, resultDelete.getProductQuantity());
+    }
+
 }
