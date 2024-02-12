@@ -1,3 +1,5 @@
+Link: https://tutorial-1-eshop-alifbintang.koyeb.app/
+
 # Tutorial 2
 ## List Quality Code Issues
 ### 1. Renaming bad function name
@@ -13,6 +15,8 @@ Sebelumnya ada beberapa interface yang menggunakan public access modifier, yang 
 
 Menurut saya, dengan penerapan saat ini sudah memenuhi konsep CI/CD. Dengan alur kerja yang diselenggarakan melalui GitHub Workflows, proyek kita dapat mengotomatiskan proses CI dengan menjalankan uji coba dan CD dengan melakukan deployment secara otomatis setiap kali ada pembaruan yang diunggah ke repositori GitHub. Setiap kali ada pembaruan di branch mana pun, kode akan melewati serangkaian uji coba yang ditentukan dalam file ci.yml dan akan di-scan oleh PMD melalui aksi yang tercantum. Setelah dianggap berhasil dan berkualitas, kode kita akan di-merge ke branch main di mana proses deployment ke PaaS Koyeb dan penerapan code security menggunakan scorecard.yml akan dilakukan secara otomatis. Dengan demikian, action-action tersebut membentuk workflows otomatis pada Software Development Lifecycle yang terdapat juga CI/CD.
 
+## Bonus
+![Alt text](images/code_coverage.png)
 
 # Tutorial 1
 ## Exercise 1
