@@ -34,7 +34,7 @@ public class ProductController {
     }
 
 
-    @GetMapping(value="/edit/{id}")
+    @GetMapping("/edit/{id}")
     public String editProductPage(Model model, @PathVariable("id") String productId) {
 
         Product product = new Product();
@@ -44,7 +44,7 @@ public class ProductController {
         return "EditProduct";
     }
 
-    @PostMapping(value="/edit/{id}")
+    @PostMapping("/edit/{id}")
     public String editProductPost(@ModelAttribute Product product, Model model, @PathVariable("id") String productId) {
 
         product.setProductId(productId); // Reasoning: After posted by form, id becomes null
