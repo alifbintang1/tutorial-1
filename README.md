@@ -1,4 +1,12 @@
 Link: https://tutorial-1-eshop-alifbintang.koyeb.app/
+### SonarCloud Report
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=alifbintang1_tutorial-1&metric=coverage)](https://sonarcloud.io/summary/new_code?id=alifbintang1_tutorial-1)
+
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=alifbintang1_tutorial-1&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=alifbintang1_tutorial-1)
+
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=alifbintang1_tutorial-1&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=alifbintang1_tutorial-1)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alifbintang1_tutorial-1&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=alifbintang1_tutorial-1)
 
 # Tutorial 2
 ## List Quality Code Issues

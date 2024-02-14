@@ -18,9 +18,8 @@ public class ProductRepository {
         return product;
     }
     public Product edit(Product product){
-        System.out.println("MASUK SINI");
+
         for (Product currentProduct: productData) {
-            System.out.println("currentProduct.getProductId() = " + currentProduct.getProductId());
             if (currentProduct.getProductId().equals(product.getProductId())) {
                 currentProduct.setProductQuantity(product.getProductQuantity());
                 currentProduct.setProductName(product.getProductName());
