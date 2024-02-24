@@ -8,6 +8,30 @@ Link: https://tutorial-1-eshop-alifbintang.koyeb.app/
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alifbintang1_tutorial-1&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=alifbintang1_tutorial-1)
 
+# Tutorial 3
+## 1. Prinsip yang Diaplikasikan
+
+### Single Responsibility Principle (SRP)
+Prinsip ini berkaitan dengan 1 class yang hanya punya 1 tanggung jawab. Saya memisahkan CarController yang ada di ProductController, karena kedua class tersebut memliki tanggung jawab yang berbeda.
+
+### Liskov Substitution Principle (LSP)
+Prinsip ini berkaitan dengan subclass harus bisa menggantikan superclass tanpa mengubah fungsionalitas dari superclass. Sebelumnya, class CarController meng-extends class ProductController, yang mana seharusnya tidak perlu karena CarController memiliki hubungan berbeda dengan ProductController. Maka, saya menghapus inheritance tersebut.
+
+### Dependency Inversion Principle (DIP)
+Prinsip ini berkaitan dengan high-level module tidak boleh bergantung pada low-level module, keduanya harus bergantung pada abstraksi. Saya membuat interface CarService yang diimplementasikan oleh CarServiceImpl, sehingga CarController tidak bergantung langsung pada CarServiceImpl, melainkan CarService.
+
+
+## 2. Keuntungan Menggunakan Prinsip SOLID
+Keuntungan utama menggunakan prinsip SOLID adalah bahwa ia mempromosikan pembangunan perangkat lunak yang mudah dimengerti dan dapat diperluas.
+Hal ini juga memfasilitasi pengujian yang lebih baik, karena kode yang dipisahkan secara jelas memungkinkan untuk pengujian unit yang lebih efektif. 
+Contohnya class CarController yang dipisahkan dari ProductController, sehingga memungkinkan untuk pengujian unit yang efektif karena dapat dilakukan secara terpisah, serta meningkatkan keterbacaan code.
+
+## 3. Kekurangan Jika Tidak Menggunakan Prinsip SOLID
+Kekurangan utama dari tidak menggunakan prinsip SOLID adalah bahwa kode yang dihasilkan akan menjadi sulit dipahami dan di-maintain.
+Kode yang tidak mematuhi prinsip SOLID cenderung memiliki banyak ketergantungan yang rumit, yang membuatnya sulit untuk diuji dan diperluas. 
+Selain itu, pengembang lain yang bekerja pada kode tersebut akan kesulitan untuk memahami kode tersebut.
+Contohnya jika class CarController dibiarkan meng-extends ProductController dan dalam 1 file, maka ketika pengembang lain akan kesulitan ketika ingin mencari kode yang mengatur routing dengan map `/car` karena harus mencari di dalam file ProductController.
+
 # Tutorial 2
 ## List Quality Code Issues
 ### 1. Renaming bad function name
