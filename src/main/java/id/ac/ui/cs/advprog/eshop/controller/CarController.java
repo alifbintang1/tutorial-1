@@ -44,7 +44,6 @@ public class CarController{
 
     @PostMapping("/editCar")
     public String editProductPost(@ModelAttribute("car") Car car, Model model){
-        System.out.println(car.getCarId());
         carService.update(car.getCarId(), car);
         return "redirect:listCar";
     }
