@@ -54,7 +54,7 @@ class OrderRepositoryTest {
         assertEquals(order.getId(), findResult.getId());
         assertEquals(order.getOrderTime(), findResult.getOrderTime());
         assertEquals(order.getAuthor(), findResult.getAuthor());
-        assertEquals(order.getStatus(), findResult.getStatus());
+        assertEquals(OrderStatus.SUCCESS.getValue(), findResult.getStatus());
     }
 
     @Test
@@ -66,7 +66,7 @@ class OrderRepositoryTest {
         assertEquals(orders.get(1).getId(), findResult.getId());
         assertEquals(orders.get(1).getOrderTime(), findResult.getOrderTime());
         assertEquals(orders.get(1).getAuthor(), findResult.getAuthor());
-        assertEquals(OrderStatus.SUCCESS.getValue(), findResult.getStatus());
+        assertEquals(orders.get(1).getStatus(), findResult.getStatus());
     }
     @Test
     void testFindByIdIfIdNotFound() {
