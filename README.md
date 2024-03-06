@@ -9,13 +9,13 @@ Link: https://tutorial-1-eshop-alifbintang.koyeb.app/
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alifbintang1_tutorial-1&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=alifbintang1_tutorial-1)
 
 # Tutorial 4
-Prosedur Test-Driven Development (TDD) adalah pendekatan yang sangat bermanfaat dalam pengembangan perangkat lunak karena membantu memastikan kode yang dihasilkan aman dan efisien. 
+1. Prosedur Test-Driven Development (TDD) adalah pendekatan yang sangat bermanfaat dalam pengembangan perangkat lunak karena membantu memastikan kode yang dihasilkan aman dan efisien. 
 Dengan menguji kode sebelumnya sebelum implementasi, TDD memastikan bahwa kode tersebut aman jika semua tes berhasil. 
 Selain itu, kemampuan untuk langsung menguji perubahan kode memfasilitasi proses refactoring dengan lebih mudah. 
 Namun, untuk memastikan kebenaran kode secara menyeluruh, penting untuk menambahkan pengujian interaksi fitur. 
 Sebagai contoh, dalam pengembangan fitur yang melibatkan pembuatan, pembaruan, dan penghapusan produk dalam jumlah besar, menguji interaksi antara ketiga fitur tersebut dengan membuat, mengupdate, dan menghapus 100 produk sekaligus adalah langkah yang diperlukan.
 
-Menurut saya, saya yakin bahwa test-test yang telah saya buat memenuhi prinsip F.I.R.S.T. 
+2. Menurut saya, saya yakin bahwa test-test yang telah saya buat memenuhi prinsip F.I.R.S.T. 
 Dalam pengembangan perangkat lunak, prinsip F.I.R.S.T. sangat penting, yang mengedepankan aspek testing yang efektif dan efisien. 
 Tes yang saya buat dirancang sedemikian rupa sehingga mereka fokus pada pengujian kode secara menyeluruh dengan algoritma testing yang minimal, memastikan bahwa setiap tes terisolasi dengan baik sehingga tidak mempengaruhi hasil tes lainnya. 
 Selain itu, saya memastikan bahwa setiap tes memiliki asersi yang kuat untuk memverifikasi kebenaran output dan memastikan bahwa tes tersebut dapat digunakan secara berulang untuk menguji perubahan kode di masa mendatang. Dengan demikian, saya yakin bahwa pendekatan pengujian yang saya terapkan memenuhi standar kualitas yang diharapkan dalam pengembangan perangkat lunak.
