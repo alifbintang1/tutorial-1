@@ -47,7 +47,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentPendingStatus() {
+    void testCreateCashOnDeliveryPaymentPendingStatus() {
         Payment payment = new CashOnDeliveryPayment(
                 "e45d7d21-fd29-4533-a569-abbe0819579a",
                 PaymentMethod.COD.getValue(),
@@ -62,7 +62,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentSuccessStatus() {
+    void testCreateCashOnDeliveryPaymentSuccessStatus() {
         Payment payment = new CashOnDeliveryPayment(
                 "e45d7d21-fd29-4533-a569-abbe0819579a",
                 PaymentMethod.COD.getValue(),
@@ -78,7 +78,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentRejectedStatus() {
+    void testCreateCashOnDeliveryPaymentRejectedStatus() {
         Payment payment = new CashOnDeliveryPayment(
                 "e45d7d21-fd29-4533-a569-abbe0819579a",
                 PaymentMethod.COD.getValue(),
@@ -94,7 +94,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentInvalidStatus() {
+    void testCreateCashOnDeliveryPaymentInvalidStatus() {
         assertThrows(IllegalArgumentException.class, () -> {
             @SuppressWarnings("unused")
             Payment payment = new CashOnDeliveryPayment(
@@ -108,7 +108,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentNullStatus() {
+    void testCreateCashOnDeliveryPaymentNullStatus() {
         assertThrows(IllegalArgumentException.class, () -> {
             @SuppressWarnings("unused")
             Payment payment = new CashOnDeliveryPayment(
@@ -122,7 +122,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testSetCODPaymentStatStatusToSuccess() {
+    void testSetCashOnDeliveryPaymentStatStatusToSuccess() {
         Payment payment = new CashOnDeliveryPayment(
                 "e45d7d21-fd29-4533-a569-abbe0819579a",
                 PaymentMethod.COD.getValue(),
@@ -134,7 +134,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testSetCODPaymentStatStatusToRejected() {
+    void testSetCashOnDeliveryPaymentStatStatusToRejected() {
         Payment payment = new CashOnDeliveryPayment(
                 "e45d7d21-fd29-4533-a569-abbe0819579a",
                 PaymentMethod.COD.getValue(),
@@ -146,7 +146,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testSetCODPaymentStatStatusToPending() {
+    void testSetCashOnDeliveryPaymentStatStatusToPending() {
         Payment payment = new CashOnDeliveryPayment(
                 "e45d7d21-fd29-4533-a569-abbe0819579a",
                 PaymentMethod.COD.getValue(),
@@ -158,7 +158,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testSetCODPaymentStatStatusToInvalid() {
+    void testSetCashOnDeliveryPaymentStatStatusToInvalid() {
         Payment payment = new CashOnDeliveryPayment(
                 "e45d7d21-fd29-4533-a569-abbe0819579a",
                 PaymentMethod.COD.getValue(),
@@ -171,7 +171,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testSetCODPaymentStatStatusToNull() {
+    void testSetCashOnDeliveryPaymentStatStatusToNull() {
         Payment payment = new CashOnDeliveryPayment(
                 "e45d7d21-fd29-4533-a569-abbe0819579a",
                 PaymentMethod.COD.getValue(),
@@ -184,7 +184,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentWithNullOrder() {
+    void testCreateCashOnDeliveryPaymentWithNullOrder() {
         assertThrows(IllegalArgumentException.class, () -> {
             @SuppressWarnings("unused")
             Payment payment = new CashOnDeliveryPayment(
@@ -197,7 +197,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentWithEmptyPaymentData() {
+    void testCreateCashOnDeliveryPaymentWithEmptyPaymentData() {
         paymentData.clear();
         assertThrows(IllegalArgumentException.class, () -> {
             @SuppressWarnings("unused")
@@ -211,7 +211,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentWithNullPaymentData() {
+    void testCreateCashOnDeliveryPaymentWithNullPaymentData() {
         assertThrows(IllegalArgumentException.class, () -> {
             @SuppressWarnings("unused")
             Payment payment = new CashOnDeliveryPayment(
@@ -224,7 +224,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentInvalidDeliveryFee() {
+    void testCreateCashOnDeliveryPaymentInvalidDeliveryFee() {
         paymentData.put("deliveryFee", "");
         assertThrows(IllegalArgumentException.class, () -> {
             @SuppressWarnings("unused")
@@ -238,7 +238,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentInvalidAddress() {
+    void testCreateCashOnDeliveryPaymentInvalidAddress() {
         paymentData.put("address", "");
         assertThrows(IllegalArgumentException.class, () -> {
             @SuppressWarnings("unused")
@@ -252,7 +252,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentWithNullDeliveryFee() {
+    void testCreateCashOnDeliveryPaymentWithNullDeliveryFee() {
         paymentData.put("deliveryFee", null);
         assertThrows(IllegalArgumentException.class, () -> {
             @SuppressWarnings("unused")
@@ -266,7 +266,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentWithNullAddress() {
+    void testCreateCashOnDeliveryPaymentWithNullAddress() {
         paymentData.put("address", null);
         assertThrows(IllegalArgumentException.class, () -> {
             @SuppressWarnings("unused")
@@ -280,7 +280,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentWithInvalidDeliveryFeeAndAddress() {
+    void testCreateCashOnDeliveryPaymentWithInvalidDeliveryFeeAndAddress() {
         paymentData.put("deliveryFee", "");
         paymentData.put("address", "");
         assertThrows(IllegalArgumentException.class, () -> {
@@ -295,7 +295,7 @@ class PaymentCashOnDeliveryTest {
     }
 
     @Test
-    void testCreateCODPaymentWithNullDeliveryFeeAndAddress() {
+    void testCreateCashOnDeliveryPaymentWithNullDeliveryFeeAndAddress() {
         paymentData.put("deliveryFee", null);
         paymentData.put("address", null);
         assertThrows(IllegalArgumentException.class, () -> {
