@@ -4,11 +4,11 @@ import lombok.Getter;
 @Getter
 public class CashOnDeliveryPayment extends Payment {
     public CashOnDeliveryPayment(String id, String method, Order order, Map<String, String> paymentData, String status) {
-        return null;
+        super(id, method, order, paymentData, status);
     }
 
     public CashOnDeliveryPayment(String id, String method, Order order, Map<String, String> paymentData) {
-        return null;
+        super(id, method, order, paymentData);
     }
 
 
